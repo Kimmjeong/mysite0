@@ -26,7 +26,7 @@ public class LoginAction implements Action {
 		
 		// 해당 정보가 없을 시 로그인 실패
 		if(vo == null){
-			//HttpUtil.redirect(response, "${pageContext.request.contextPath}/user?a=loginform");
+			//HttpUtil.redirect(response, "${pageContext.request.contextPath}/user?a=loginform&result=fail");
 			HttpUtil.forwarding(request, response, "/WEB-INF/views/user/loginform_retry.jsp");
 			return;
 		}

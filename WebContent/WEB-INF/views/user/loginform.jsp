@@ -19,6 +19,7 @@
 					<label class="block-label" >패스워드</label>
 					<input name="password" type="password" value="">
 					<input type="submit" value="로그인">
+					
 				</form>
 			</div>
 		</div>

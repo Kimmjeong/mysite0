@@ -56,17 +56,17 @@ public class BoardDao {
 					
 					Long no=rs.getLong(1);
 					String title=rs.getString(2);
-					Long member_no=rs.getLong(3);
-					String member_name=rs.getString(4);
-					Long view_cnt=rs.getLong(5);
-					String reg_date=rs.getString(6);
+					Long memberNo=rs.getLong(3);
+					String memberName=rs.getString(4);
+					Long viewCnt=rs.getLong(5);
+					String regDate=rs.getString(6);
 					
 					vo.setNo(no);
 					vo.setTitle(title);
-					vo.setMember_no(member_no);
-					vo.setMember_name(member_name);
-					vo.setView_cnt(view_cnt);
-					vo.setReg_date(reg_date);
+					vo.setMemberNo(memberNo);
+					vo.setMemberName(memberName);
+					vo.setViewCnt(viewCnt);
+					vo.setRegDate(regDate);
 					
 					list.add(vo);
 					
@@ -102,7 +102,7 @@ public class BoardDao {
 			
 			pstmt.setString(1, vo.getTitle());
 			pstmt.setString(2, vo.getContent());
-			pstmt.setLong(3, vo.getMember_no());
+			pstmt.setLong(3, vo.getMemberNo());
 			
 			pstmt.executeUpdate();
 			
@@ -142,12 +142,12 @@ public class BoardDao {
 				
 				String title=rs.getString(1);
 				String content=rs.getString(2);
-				Long member_no=rs.getLong(3);
+				Long memberNo=rs.getLong(3);
 				
 				vo.setNo(no);
 				vo.setTitle(title);
 				vo.setContent(content);
-				vo.setMember_no(member_no);
+				vo.setMemberNo(memberNo);
 				
 			}
 			
@@ -169,7 +169,7 @@ public class BoardDao {
 	}
 
 	// 글삭제
-	public void delete(Long no, Long member_no){
+	public void delete(Long no, Long memberNo){
 		
 		Connection conn=null;
 		PreparedStatement pstmt=null;
@@ -181,7 +181,7 @@ public class BoardDao {
 			
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setLong(1, no);
-			pstmt.setLong(2, member_no);
+			pstmt.setLong(2, memberNo);
 			pstmt.executeUpdate();
 			
 		} catch (SQLException e) {

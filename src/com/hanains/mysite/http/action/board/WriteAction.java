@@ -23,12 +23,12 @@ public class WriteAction implements Action {
 		
 		HttpSession session=request.getSession();
 		UserVo authUser=(UserVo) session.getAttribute("authUser");
-		Long member_no=authUser.getNo();
+		Long memberNo=authUser.getNo();
 		
 		BoardVo vo=new BoardVo();
 		vo.setTitle(title);
 		vo.setContent(content);
-		vo.setMember_no(member_no);
+		vo.setMemberNo(memberNo);
 		
 		BoardDao dao=new BoardDao();
 		dao.insert(vo);

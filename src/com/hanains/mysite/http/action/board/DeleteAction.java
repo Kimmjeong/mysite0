@@ -19,7 +19,7 @@ public class DeleteAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Long no=Long.parseLong(request.getParameter("no"));
-		Long writer_no=Long.parseLong(request.getParameter("member_no"));
+		Long writer_no=Long.parseLong(request.getParameter("memberNo"));
 		
 		HttpSession session=request.getSession();
 		UserVo authUser=(UserVo) session.getAttribute("authUser");

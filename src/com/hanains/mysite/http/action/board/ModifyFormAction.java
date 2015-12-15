@@ -31,7 +31,7 @@ public class ModifyFormAction implements Action {
 		PrintWriter out=response.getWriter();
 		
 		// 작성자 확인
-		if(authUser==null || authUser.getNo()!=writing.getMember_no()){
+		if(authUser==null || authUser.getNo()!=writing.getMemberNo()){
 			out.print("<script>alert('작성자가 아닙니다.');history.back()</script>");
 			out.flush();
 			out.close();

@@ -49,7 +49,7 @@ public class GuestBookDao {
 			
 			stmt=connection.createStatement();
 			
-			String sql="select no, name, password, message, to_char(reg_date, 'YYYY-MM-DD') reg_date from guestbook order by no desc";
+			String sql="select no, name, password, message, to_char(reg_date, 'YYYY-MM-DD') from guestbook order by no desc";
 			rs=stmt.executeQuery(sql);
 			
 			while(rs.next()){
@@ -58,14 +58,14 @@ public class GuestBookDao {
 				String name=rs.getString(2);
 				String password=rs.getString(3);
 				String message=rs.getString(4);
-				String reg_date=rs.getString(5);
+				String regDate=rs.getString(5);
 				
 				GuestBookVo vo=new GuestBookVo();
 				vo.setNo(no);
 				vo.setName(name);
 				vo.setPassword(password);
 				vo.setMessage(message);
-				vo.setReg_date(reg_date);
+				vo.setRegDate(regDate);
 				
 				list.add(vo);
 			}
